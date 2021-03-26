@@ -1,0 +1,60 @@
+body{ 
+  font-family: 'neuropol_xregular';
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  overflow: hidden;
+  background:linear-gradient(0.50turn, #000, #00FFFF,#000);
+}
+
+.container{
+  width: 95%;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.typewriter{
+  width: fit-content;
+  margin: auto;
+}
+
+.typewriter h1{
+  
+  font-size: 4rem;
+}
+
+span{
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker{
+  50%{
+    opacity: 0;
+  }
+}
+
+@media(max-width:768px){
+  body{
+    font-size: 1.3rem;
+  }
+
+  .container h1{
+    font-size: 3rem;
+  }
+}
+
+@media(max-width:480px){
+  body{
+    font-size: 1rem;
+  }
+
+  .container h1{
+    font-size: 2rem;
+  }
+}
+
+
+
