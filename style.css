@@ -15,33 +15,26 @@ body{
   align-items: center;
 }
 
-.typewriter{
+#typewriter{
   width: fit-content;
   margin: auto;
 }
 
-.typewriter p{
-  font-size: 1.5rem;
-}
+#quote{font-size: 1.5rem;}
 
-span{
-  animation: blinker 1s linear infinite;
-}
+span{animation: blinker 1s linear infinite;}
 
 @keyframes blinker{
-  50%{
-    opacity: 0;
-  }
+  50%{opacity: 0;}
 }
 
 @media(max-width:1280px){
-  .container{
-    width: 95%;
-  }
+  .container{width: 95%;}
 };
 
 @media(max-width:768px){
-  .typewriter p{
-    font-size: 1rem;
-  }
+  #quote{font-size: 1rem;}
 }
+
+
+
