@@ -20,7 +20,7 @@ body{
   margin: auto;
 }
 
-#quote{font-size: 1.5rem;}
+#typewriter p{font-size: 1.5rem;}
 
 span{animation: blinker 1s linear infinite;}
 
@@ -30,11 +30,8 @@ span{animation: blinker 1s linear infinite;}
 
 @media(max-width:1280px){
   .container{width: 95%;}
-};
-
-@media(max-width:768px){
-  #quote{font-size: 1rem;}
 }
 
-
-
+@media(max-width:480px){
+  #typewriter p{font-size: 1rem;}
+}
