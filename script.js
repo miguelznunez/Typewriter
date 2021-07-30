@@ -2,47 +2,37 @@ var quoteArray = [];
 var index = 0; 
 var textPosition = 0; 
 var flag = true;
-var destination = document.getElementById("typedtext");
 
-window.addEventListener('load', typewriter);
-
-function loadQuote()
-{
+loadQuote = () => {
   const url = 'https://api.quotable.io/random';
 
   fetch(url)
 
-  .then(response => 
-  {
-    if(response.ok)
+  .then(response => {
+    if (!response.ok) throw Error(response.statusText);
       return response.json();
-    else
-      console.log(response.status);
-  })
+   })
 
-  .then(data =>
-  { 
-    quoteArray[index] = data.content;
-  }) 
+   .then(data => {
+      quoteArray[index] = data.content;
+   })
+
+   .catch(error => console.log(error));
 }
 
-function typewriter()
-{
-  if(flag)
-  {
+typewriter = () => {
+  if(flag){
     loadQuote();
-    quoteArray[index] += ' '; 
+    quoteArray[index] += ""; 
     flag = false;
   }
 
-  destination.innerHTML = quoteArray[index].substring(0, textPosition) + '<span>\u25AE</span>';
+  document.querySelector("#quote").innerHTML = quoteArray[index].substring(0, textPosition) + '<span>\u25AE</span>';
 
-  if(textPosition++ != quoteArray[index].length)
-  {
+  if(textPosition++ != quoteArray[index].length){
     setTimeout("typewriter()", 100);
   }
-  else
-  {
+  else{
     quoteArray[index] = ' ';
     setTimeout("typewriter()", 4000);
     textPosition = 0;
@@ -50,6 +40,4 @@ function typewriter()
   }   
 }
 
-
-
-
+window.addEventListener('load', typewriter);
